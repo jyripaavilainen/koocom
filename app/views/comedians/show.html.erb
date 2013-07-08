@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Stagename:</b>
+  <%= @comedian.stagename %>
+</p>
+
+<p>
+  <b>Website url:</b>
+  <%= @comedian.website_url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @comedian.description %>
+</p>
+
+<p>
+  <b>Youtube video:</b>
+  <%= @comedian.youtube_video_id %>
+</p>
+
+<p>
+  <b>Contact email:</b>
+  <%= @comedian.contact_email %>
+</p>
+
+<p>
+  <b>Profile photo url:</b>
+  <%= @comedian.profile_photo_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_comedian_path(@comedian) %> |
+<%= link_to 'Back', comedians_path %>

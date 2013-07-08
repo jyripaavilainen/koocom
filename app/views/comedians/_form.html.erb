@@ -1,0 +1,41 @@
+<%= form_for(@comedian) do |f| %>
+  <% if @comedian.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comedian.errors.count, "error") %> prohibited this comedian from being saved:</h2>
+
+      <ul>
+      <% @comedian.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stagename %><br />
+    <%= f.text_field :stagename %>
+  </div>
+  <div class="field">
+    <%= f.label :website_url %><br />
+    <%= f.text_field :website_url %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :youtube_video_id %><br />
+    <%= f.text_field :youtube_video_id %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_email %><br />
+    <%= f.text_field :contact_email %>
+  </div>
+  <div class="field">
+    <%= f.label :profile_photo_url %><br />
+    <%= f.text_field :profile_photo_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

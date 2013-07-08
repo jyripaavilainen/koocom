@@ -1,0 +1,33 @@
+<h1>Listing comedians</h1>
+
+<table>
+  <tr>
+    <th>Stagename</th>
+    <th>Website url</th>
+    <th>Description</th>
+    <th>Youtube video</th>
+    <th>Contact email</th>
+    <th>Profile photo url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comedians.each do |comedian| %>
+  <tr>
+    <td><%= comedian.stagename %></td>
+    <td><%= comedian.website_url %></td>
+    <td><%= comedian.description %></td>
+    <td><%= comedian.youtube_video_id %></td>
+    <td><%= comedian.contact_email %></td>
+    <td><%= comedian.profile_photo_url %></td>
+    <td><%= link_to 'Show', comedian %></td>
+    <td><%= link_to 'Edit', edit_comedian_path(comedian) %></td>
+    <td><%= link_to 'Destroy', comedian, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Comedian', new_comedian_path %>
