@@ -1,7 +1,7 @@
-<%= form_for(@comedian) do |f| %>
+<%= simple_form_for(@comedian) do |f| %>
   <% if @comedian.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@comedian.errors.count, "error") %> prohibited this comedian from being saved:</h2>
+      <h2><%= pluralize(@comedian.errors.count, "error") %> virhe tapahtui ja koomikkoa ei tallennettu:</h2>
 
       <ul>
       <% @comedian.errors.full_messages.each do |msg| %>
@@ -11,31 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :stagename %><br />
-    <%= f.text_field :stagename %>
-  </div>
-  <div class="field">
-    <%= f.label :website_url %><br />
-    <%= f.text_field :website_url %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :youtube_video_id %><br />
-    <%= f.text_field :youtube_video_id %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_email %><br />
-    <%= f.text_field :contact_email %>
-  </div>
-  <div class="field">
-    <%= f.label :profile_photo_url %><br />
-    <%= f.text_field :profile_photo_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <%= f.input :stagename, label: 'Esiintymisnimi' %>
+  <%= f.input :website_url, label: 'Kotisivun osoite (http://...)' %>
+  <%= f.input :contact_email, label: 'Sähköpostiosoite' %>
+  <%= f.input :description, label: 'Kuvaus' %>
+  <%= f.input :profile_photo_url, label: 'Kuvan url-osoite' %>
+  <%= f.input :youtube_video_id, label: 'Youtube-videon id', required: false %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Lisää koomikko" %>
   </div>
 <% end %>

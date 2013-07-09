@@ -1,4 +1,4 @@
-<h1>Listing events</h1>
+<h1>Tulevat komiikkatapahtumat</h1>
 
 <table>
   <tr>
@@ -16,11 +16,40 @@
   </tr>
 
 <% @events.each do |event| %>
+
+    <div class="event-container clear">
+
+        <div class="event-city clear">
+            <h4><%= event.city %></h4>
+        </div>
+
+        <div class="event-info">
+            <div class="event-date-time">
+                <p><%= event.date.to_formatted_s(:fi) %> <%= event.start_time.to_formatted_s(:time) %>–<%= event.end_time.to_formatted_s(:time) %></p>
+            </div>
+            <div class="event-name">
+                <%= link_to event.name, event %>
+            </div>
+
+            <div class="event-venue">
+                <p><%= event.venue %></p>
+            </div>
+
+        </div>
+
+        <div class="event-pricing">
+            <div class="event-price">
+                <p><%= event.price %> €</p>
+            </div>
+        </div>
+
+    </div>
+
   <tr>
     <td><%= event.city %></td>
-    <td><%= event.date %></td>
-    <td><%= event.start_time %></td>
-    <td><%= event.end_time %></td>
+    <td><%= event.date.to_formatted_s(:fi) %></td>
+    <td><%= event.start_time.to_formatted_s(:time) %></td>
+    <td><%= event.end_time.to_formatted_s(:time) %></td>
     <td><%= event.description %></td>
     <td><%= event.price %></td>
     <td><%= event.venue %></td>
@@ -34,4 +63,6 @@
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
+<% if organizer_signed_in? %>
+    <%= link_to 'Uusi tapahtuma', new_event_path %>
+<% end %>

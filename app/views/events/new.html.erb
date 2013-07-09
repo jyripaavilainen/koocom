@@ -1,5 +1,9 @@
-<h1>New event</h1>
+<% content_for :head do %>
+  <title>Lisää tapahtuma</title>
+<% end %>
+
+<h2>Lisää tapahtuma</h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', events_path %>
+<%= link_to 'Takaisin tapahtumiin', events_path %>

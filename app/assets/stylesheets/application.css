@@ -15,3 +15,71 @@
 input#event_start_time, input#event_end_time {
 	width: 87px;
 }
+
+body {
+	padding-top: 40px;
+}
+
+.navbar-inner {
+	color: #FFF;
+}
+
+.brand:hover{
+	background: none !important;
+}
+
+.clear {clear:both;}
+
+/*  TAPAHTUMALISTAUS  */
+
+.event-container {
+	width: 100%;
+	margin: 2em 0;
+}
+
+.event-city {
+	width:100%;
+	border-bottom: 1px solid #EEE;
+	padding: 0;
+	margin-bottom: 1em;
+}
+
+.event-city h4{
+	width:20%;
+	background-color: #0C3;
+	color: #FFF;
+	padding: 0.5em 1em;
+	margin: 0;
+}
+
+.event-info {
+	width: 60%;
+	padding: 1em;
+	float: left;
+}
+
+.event-date-time, .event-name, .event-venue, .event-price{
+	width: 100%;
+	padding: 0.5rem 0;
+}
+
+.event-date-time p, .event-venue p {
+	font-size: 1.25rem;
+}
+
+.event-name a {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.event-pricing {
+	width: 30%;
+	float: right;
+	padding: 2rem;
+}
+
+.event-price p {
+	text-align: center;
+	font-size: 3rem;
+	font-weight: bold;
+}

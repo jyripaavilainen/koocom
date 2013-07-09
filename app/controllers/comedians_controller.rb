@@ -44,7 +44,7 @@ class ComediansController < ApplicationController
 
     respond_to do |format|
       if @comedian.save
-        format.html { redirect_to @comedian, notice: 'Comedian was successfully created.' }
+        format.html { redirect_to @comedian, notice: 'Koomikon tallennus onnistui.' }
         format.json { render json: @comedian, status: :created, location: @comedian }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ComediansController < ApplicationController
 
     respond_to do |format|
       if @comedian.update_attributes(params[:comedian])
-        format.html { redirect_to @comedian, notice: 'Comedian was successfully updated.' }
+        format.html { redirect_to @comedian, notice: 'Koomikon tallennus onnistui.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

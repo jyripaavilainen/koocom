@@ -21,5 +21,5 @@ $(document).ready(function() {
     	minDate: new Date(),
     	dateFormat: 'dd.mm.yy',
     	firstDay: 1
-    });
+    }, $.datepicker.regional[ "fi" ]);
 });
