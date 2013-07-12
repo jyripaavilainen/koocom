@@ -1,68 +1,40 @@
 <h1>Tulevat komiikkatapahtumat</h1>
 
-<table>
-  <tr>
-    <th>City</th>
-    <th>Date</th>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Venue</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @events.each do |event| %>
 
-    <div class="event-container clear">
+    <% if event.date > ( Date.today - 1 ) %>
+        <div class="event-container clear">
 
-        <div class="event-city clear">
-            <h4><%= event.city %></h4>
+            <div class="event-city clear">
+                <h4><%= event.city %></h4>
+            </div>
+
+            <div class="event-info">
+                <div class="event-date-time">
+                    <p><%= event.date.to_formatted_s(:fi) %> <%= event.start_time.to_formatted_s(:time) %>–<%= event.end_time.to_formatted_s(:time) %> | <%= event.venue %></p>
+                </div>
+                <div class="event-name">
+                    <h2><%= link_to event.name, event %></h2>
+                </div>
+                <div class="event-comedians">
+                    <p><%= event.description %></p>
+                </div>
+
+            </div>
+
+            <div class="event-pricing">
+                <div class="event-price">
+                    <p><%= event.price %> €</p>
+                </div>
+            </div>
+            <div class="clear"></div>
         </div>
+    <% end %>
 
-        <div class="event-info">
-            <div class="event-date-time">
-                <p><%= event.date.to_formatted_s(:fi) %> <%= event.start_time.to_formatted_s(:time) %>–<%= event.end_time.to_formatted_s(:time) %></p>
-            </div>
-            <div class="event-name">
-                <%= link_to event.name, event %>
-            </div>
-
-            <div class="event-venue">
-                <p><%= event.venue %></p>
-            </div>
-
-        </div>
-
-        <div class="event-pricing">
-            <div class="event-price">
-                <p><%= event.price %> €</p>
-            </div>
-        </div>
-
-    </div>
-
-  <tr>
-    <td><%= event.city %></td>
-    <td><%= event.date.to_formatted_s(:fi) %></td>
-    <td><%= event.start_time.to_formatted_s(:time) %></td>
-    <td><%= event.end_time.to_formatted_s(:time) %></td>
-    <td><%= event.description %></td>
-    <td><%= event.price %></td>
-    <td><%= event.venue %></td>
-    <td><%= event.name %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
 <% end %>
-</table>
 
 <br />
 
 <% if organizer_signed_in? %>
-    <%= link_to 'Uusi tapahtuma', new_event_path %>
-<% end %>
+    <%= link_to 'Uusi tapahtuma', new_event_path, class: "btn btn-info btn-large" %>
+<% end %>  

@@ -38,12 +38,12 @@
 
   <div class="field">
     <p>Lippujen hinta</p>
-    <%= f.number_field :price %>
+    <%= f.number_field :price %> euroa
   </div>
 
   <div class="field">
     <p>Kuvaus (koomikot jne.)</p>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :rows => "10" %>
   </div>
 
   <div class="form-actions">

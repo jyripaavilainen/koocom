@@ -51,12 +51,33 @@
 			</div>
 		</div>
 	<div class="container">
+		<div class="row">
+			<div class="span3">
+				<ul class="nav nav-list nav-tabs nav-stacked">
+					<li class="nav-header">Stand up -keikat</li>
+					<li><%= link_to "Selaa keikkoja", events_path %></li>
+					<li><a href="#">Etsi keikkoja</a></li>
+					<li class="nav-header">Stand up -koomikot</li>
+					<li><%= link_to "Selaa koomikoita", comedians_path %></li>
+					<li><a href="#">Etsi koomikoita</a></li>
+					<li><a href="#">Tilaa koomikko</a></li>
+				</ul>
 
-		<p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+			</div>
+			<div class="span9">
+				<% if flash[:notice] %>
+					<div class="alert">
+						<button class="close" data-dismiss="alert">x</button>
+						<%= flash[:notice] %>
+					</div>
+				<% end %>
+
 		
-		<%= yield %>
+				<%= yield %>
 
+			</div>
+
+		</div>
 	</div>
 </body>
 </html>

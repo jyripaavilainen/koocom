@@ -1,35 +1,30 @@
-<p id="notice"><%= notice %></p>
+<% content_for :head do %>
+  <title><%= @comedian.stagename %> | Kotimaiset stand up -koomikot | Koomikot.com</title>
+<% end %>
 
-<p>
-  <b>Stagename:</b>
-  <%= @comedian.stagename %>
-</p>
+<h1 class="comedian-profile-name"><%= @comedian.stagename %></h1>
 
-<p>
-  <b>Website url:</b>
-  <%= @comedian.website_url %>
-</p>
+<%= link_to 'Kotisivut', @comedian.website_url, class: "btn btn-info btn-large comedian-website-button" %>
+<%= link_to 'Tilaa keikalle', "#", class: "btn btn-success btn-large comedian-book-button" %>
 
-<p>
-  <b>Description:</b>
-  <%= @comedian.description %>
-</p>
+<div class="clear"></div>
 
-<p>
-  <b>Youtube video:</b>
-  <%= @comedian.youtube_video_id %>
-</p>
+<div class="image-frame">
+  <%= image_tag @comedian.profile_photo_url, class: "comedian-picture" %>
+</div>
 
-<p>
-  <b>Contact email:</b>
-  <%= @comedian.contact_email %>
-</p>
+<div class="comedian-description">
+  <p><%= @comedian.description %></p>
+</div>
 
-<p>
-  <b>Profile photo url:</b>
-  <%= @comedian.profile_photo_url %>
-</p>
+<div class="clear"></div>
+
+<div class="video-container">
+  <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/"+@comedian.youtube_video_id %>" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
-<%= link_to 'Edit', edit_comedian_path(@comedian) %> |
-<%= link_to 'Back', comedians_path %>
+<% if organizer_signed_in? && current_organizer.admin? %>
+  <%= link_to 'Muokkaa koomikkoa', edit_comedian_path(@comedian), class: "btn btn-info btn-large" %>
+  <%= link_to 'Palaa listaukseen', comedians_path, class: "btn btn-large" %>
+<% end %>

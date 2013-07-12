@@ -1,33 +1,38 @@
-<h1>Listing comedians</h1>
+<% content_for :head do %>
+  <title>Suomalaiset stand up -koomikot | Koomikot.com</title>
+<% end %>
 
-<table>
-  <tr>
-    <th>Stagename</th>
-    <th>Website url</th>
-    <th>Description</th>
-    <th>Youtube video</th>
-    <th>Contact email</th>
-    <th>Profile photo url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Kotimaiset stand up -koomikot</h1>
 
 <% @comedians.each do |comedian| %>
-  <tr>
-    <td><%= comedian.stagename %></td>
-    <td><%= comedian.website_url %></td>
-    <td><%= comedian.description %></td>
-    <td><%= comedian.youtube_video_id %></td>
-    <td><%= comedian.contact_email %></td>
-    <td><%= comedian.profile_photo_url %></td>
-    <td><%= link_to 'Show', comedian %></td>
-    <td><%= link_to 'Edit', edit_comedian_path(comedian) %></td>
-    <td><%= link_to 'Destroy', comedian, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+
+    <div class="comedian-listing">
+
+        <%= link_to comedian do %>
+         <%= image_tag comedian.profile_photo_url, class: "comedian-picture" %>
+        <% end %>
+
+        <div class="comedian-name">
+            <p><%= link_to comedian.stagename, comedian %></p>
+        </div>
+        <% if organizer_signed_in? %>
+            <% if current_organizer.admin? %>
+                <div class="admin-links">
+                    <%= link_to 'Muokkaa', edit_comedian_path(comedian) %>
+                    <%= link_to 'Poista', comedian, method: :delete, data: { confirm: 'Oletko varma?' } %>
+                </div>
+            <% end %>
+        <% end %>
+        </div>
+
+
+
 <% end %>
-</table>
+<div class="clear"></div>
+<% if organizer_signed_in? %>
 
-<br />
+    <% if current_organizer.admin? %>
+        <div style="width: 100%;"><%= link_to 'Lisää koomikko', new_comedian_path, class: "btn btn-info btn-large clear" %></div>
+    <% end %>
+<% end %>
 
-<%= link_to 'New Comedian', new_comedian_path %>
