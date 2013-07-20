@@ -1,8 +1,11 @@
 <h1>Tulevat komiikkatapahtumat</h1>
 
-<% @events.each do |event| %>
+<div class="event-listing">
+    <% if organizer_signed_in? %>
+        <%= link_to 'Uusi tapahtuma', new_event_path, class: "btn btn-info btn-large" %>
+    <% end %>  
+    <% @events.each do |event| %>
 
-    <% if event.date > ( Date.today - 1 ) %>
         <div class="event-container clear">
 
             <div class="event-city clear">
@@ -29,12 +32,7 @@
             </div>
             <div class="clear"></div>
         </div>
+
     <% end %>
 
-<% end %>
-
-<br />
-
-<% if organizer_signed_in? %>
-    <%= link_to 'Uusi tapahtuma', new_event_path, class: "btn btn-info btn-large" %>
-<% end %>  
+</div>

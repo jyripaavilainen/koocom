@@ -1,0 +1,26 @@
+<div class="event-container clear">
+
+    <div class="event-city clear">
+        <h4><%= event.city %></h4>
+    </div>
+
+    <div class="event-info">
+        <div class="event-date-time">
+            <p><%= event.date.to_formatted_s(:fi) %> <%= event.start_time.to_formatted_s(:time) %>–<%= event.end_time.to_formatted_s(:time) %> | <%= event.venue %></p>
+        </div>
+        <div class="event-name">
+            <h2><%= link_to event.name, event %></h2>
+        </div>
+        <div class="event-comedians">
+            <p><%= event.description %></p>
+        </div>
+
+    </div>
+
+    <div class="event-pricing">
+        <div class="event-price">
+            <p><%= event.price %> €</p>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

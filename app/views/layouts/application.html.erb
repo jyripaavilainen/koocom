@@ -6,10 +6,11 @@
 <% else %>
   <title>Stand up -keikat ja -koomikot | Koomikot.com</title>
 <% end %>
-  <%= stylesheet_link_tag   "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/smoothness/jquery-ui.min.css", "application", :media => "all" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/smoothness/jquery-ui.min.css", "application", :media => "all" %>
+  <%= stylesheet_link_tag "bootstrap", "bootstrap-responsive" %>
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js", "http://jquery-ui.googlecode.com/svn/tags/latest/ui/i18n/jquery.ui.datepicker-fi.js", "application" %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
@@ -22,27 +23,17 @@
 		        	<span class="icon-bar"></span>
 		    	</a>
 
-			    <a class="brand" href="#">Koomikot.com</a>
+			    <%= link_to "Koomikot.com", new_search_path, class: "brand" %>
 
 			    <div class="nav-collapse collapse">
 				    <ul class="nav pull-right">
+				    	<li><%= link_to "Keikat", events_path %></li>
+				    	<li><%= link_to "Koomikot", comedians_path %></li>
+				    	<li><%= link_to "Tilaa koomikko", "#" %></li>
 
 				    	<% if organizer_signed_in? %>
-
 						    <li><%= link_to "Omat tapahtumat", "#" %></li>
-						    <li><%= link_to "Lisää tapahtuma", new_event_path %></li>
-
-						    <% if current_organizer.admin? %>
-							    <li><%= link_to "Lisää koomikko", new_comedian_path %></li>
-							<% end %>
-
 						    <li><%= link_to "Kirjaudu ulos", destroy_organizer_session_path, method: :delete %></li>
-
-						<% else %>
-
-					      <li><%= link_to "Rekisteröidy", new_organizer_registration_path %></li>
-					      <li><%= link_to "Kirjaudu sisään", new_organizer_session_path %></li>
-
 						<% end %>
 
 				    </ul>
@@ -51,33 +42,16 @@
 			</div>
 		</div>
 	<div class="container">
-		<div class="row">
-			<div class="span3">
-				<ul class="nav nav-list nav-tabs nav-stacked">
-					<li class="nav-header">Stand up -keikat</li>
-					<li><%= link_to "Selaa keikkoja", events_path %></li>
-					<li><a href="#">Etsi keikkoja</a></li>
-					<li class="nav-header">Stand up -koomikot</li>
-					<li><%= link_to "Selaa koomikoita", comedians_path %></li>
-					<li><a href="#">Etsi koomikoita</a></li>
-					<li><a href="#">Tilaa koomikko</a></li>
-				</ul>
-
+		<% if flash[:notice] %>
+			<div class="alert">
+				<button class="close" data-dismiss="alert">x</button>
+				<%= flash[:notice] %>
 			</div>
-			<div class="span9">
-				<% if flash[:notice] %>
-					<div class="alert">
-						<button class="close" data-dismiss="alert">x</button>
-						<%= flash[:notice] %>
-					</div>
-				<% end %>
+		<% end %>
 
-		
-				<%= yield %>
 
-			</div>
+		<%= yield %>
 
-		</div>
 	</div>
 </body>
 </html>

@@ -1,0 +1,30 @@
+
+<%= form_for @search do |f| %>
+  <%= f.error_messages %>
+
+  <div class="search-comedian-container">
+    <%= f.label :comedian %><br />
+    <%= f.text_field :comedian %>
+  </div>
+  <div class="search-date-container">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="search-city-container">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="search-submit-container">
+    <%= f.submit "Etsi" %>
+  </div>
+<% end %>
+
+<h2>Kotimaiset stand up -koomikot</h2>
+<div class="clear"></div>
+<% if organizer_signed_in? %>
+
+    <% if current_organizer.admin? %>
+        <div style="width: 100%;"><%= link_to 'Lisää koomikko', new_comedian_path, class: "btn btn-info btn-large clear" %></div>
+    <% end %>
+<% end %>
+<%= render :partial => @search.comedians %>

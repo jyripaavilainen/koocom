@@ -1,12 +1,16 @@
 Koocom::Application.routes.draw do
 
+  resources :searches
+
   devise_for :organizers
 
-  resources :comedians
+  resources :comedians, :path => "koomikot"
 
 
   resources :events
-  root :to => "events#index"
+  root :to => "searches#new"
+
+  match "/searches" => "searches#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

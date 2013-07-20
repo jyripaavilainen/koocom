@@ -13,7 +13,7 @@ class ComediansController < ApplicationController
   # GET /comedians/1
   # GET /comedians/1.json
   def show
-    @comedian = Comedian.find(params[:id])
+    @comedian = Comedian.find_by_slug(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

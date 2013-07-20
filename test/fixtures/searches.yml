@@ -1,0 +1,13 @@
+one:
+  comedian: MyString
+  date: 2013-07-20
+  city: 
+  min_price: 1
+  max_price: 1
+
+two:
+  comedian: MyString
+  date: 2013-07-20
+  city: 
+  min_price: 1
+  max_price: 1

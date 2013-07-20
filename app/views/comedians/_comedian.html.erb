@@ -1,0 +1,18 @@
+<div class="comedian-listing">
+
+    <%= link_to comedian do %>
+     <%= image_tag comedian.profile_photo_url, class: "comedian-picture" %>
+    <% end %>
+
+    <div class="comedian-name">
+        <p><%= link_to comedian.stagename, comedian %></p>
+    </div>
+    <% if organizer_signed_in? %>
+        <% if current_organizer.admin? %>
+            <div class="admin-links">
+                <%= link_to 'Muokkaa', edit_comedian_path(comedian) %>
+                <%= link_to 'Poista', comedian, method: :delete, data: { confirm: 'Oletko varma?' } %>
+            </div>
+        <% end %>
+    <% end %>
+</div>
