@@ -17,7 +17,7 @@
 var jq = $.noConflict();
 
 $(document).ready(function() {
-    $("#event_date").datepicker({
+    $("#event_date, #search_date").datepicker({
     	minDate: new Date(),
     	dateFormat: 'dd.mm.yy',
     	firstDay: 1

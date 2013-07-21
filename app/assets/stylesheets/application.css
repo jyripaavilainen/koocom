@@ -24,7 +24,7 @@ input#event_price {
 }
 
 body {
-	padding-top: 40px;
+	padding-top: 60px;
 }
 
 h1,
@@ -215,4 +215,22 @@ img.comedian-picture {
 	width: 60%;
 	float: right;
 	margin: 1rem 0;
+}
+
+/*
+ * ETUSIVUN HAKU
+ */
+
+.search-comedian-container,
+.search-date-container,
+.search-city-container,
+.search-submit-container {
+	float:left;
+	padding: 0.5rem;
+}
+
+.search-comedian-container,
+.search-date-container,
+.search-city-container {
+	width: 25%;
 }
