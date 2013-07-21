@@ -8,7 +8,7 @@
 <% end %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/smoothness/jquery-ui.min.css", "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css", "application", :media => "all" %>
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js", "http://jquery-ui.googlecode.com/svn/tags/latest/ui/i18n/jquery.ui.datepicker-fi.js", "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js", "application" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js", "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js", "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -51,6 +51,11 @@
 
 		<%= yield %>
 
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<small>Bannerin kuva: <a href="http://www.flickr.com/photos/comedynose/" target="_blank">comedynose</a></small>
+		</div>
 	</div>
 </body>
 </html>

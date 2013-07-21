@@ -1,3 +1,11 @@
 <% title "Search" %>
 
-<%= render :partial => @search.events %>
+<% partial_content = @search.events %>
+
+<% if partial_content.blank? %>
+	<div class="no-events-found">
+		<p>Valitettavasti hakukriteereillä ei löytynyt yhtään tapahtumaa.</p>
+	</div>
+<% else %>
+	<%= render :partial => @search.events %>
+<% end %>

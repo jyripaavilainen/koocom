@@ -1,26 +1,30 @@
+<div class="hero-unit clear stageshot">
 
-<%= form_for @search do |f| %>
-  <%= f.error_messages %>
+  <%= form_for @search do |f| %>
+    <%= f.error_messages %>
 
-  <div class="well well-large">
-    <div class="search-comedian-container">
-      <p>Kenet koomikon haluat nähdä?<br>
-      <%= f.text_field :comedian %></p>
-    </div>
-    <div class="search-date-container">
-      <p>Milloin haluat katsoa komiikkaa?<br>
-      <%= f.text_field :date %>
-    </div>
-    <div class="search-city-container">
-      <p>Missä haluat katsoa komiikkaa?<br>
-      <%= f.text_field :city %>
-    </div>
-    <div class="search-submit-container">
-      <%= f.submit "Etsi" %>
-    </div>
-    <div class="clear"></div>
-  </div>
-<% end %>
+      <h1>Kaikki Suomen Stand-up</h1>
+      <p>Tältä sivustolta löydät kotimaan stand up -keikat ja -koomikot sekä tilaat omaan tilaisuuteesi juuri oikeanlaisen esiintyjän.</p>
+      <div class="search-box">
+        <div class="search-comedian-container">
+          <%= f.text_field :comedian, :placeholder => "Ketä katsomaan?", class: "placeholder" %>
+        </div>
+        <div class="search-city-container">
+          <%= f.text_field :city, :placeholder => "Missä kaupungissa?", class: "placeholder" %>
+        </div>
+        <div class="search-date-container">
+          <%= f.text_field :date, :placeholder => "Minä päivänä?", class: "datepicker placeholder" %>
+        </div>
+        <div class="search-submit-container">
+          <%= f.submit "Etsi" %>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+  <% end %>
+</div>
+
+<div class="clear"></div>
 
 <h2>Kotimaiset stand up -koomikot</h2>
 <div class="clear"></div>

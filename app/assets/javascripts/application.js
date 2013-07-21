@@ -17,9 +17,14 @@
 var jq = $.noConflict();
 
 $(document).ready(function() {
-    $("#event_date, #search_date").datepicker({
+    $(".datepicker").datepicker({
     	minDate: new Date(),
     	dateFormat: 'dd.mm.yy',
     	firstDay: 1
-    }, $.datepicker.regional[ "fi" ]);
+    }, $.datepicker.regional[ 'fi' ]);
+
+});
+
+$(document).ready(function() {
+	$(".placeholder").placeHeld();
 });
