@@ -34,7 +34,7 @@ class ComediansController < ApplicationController
 
   # GET /comedians/1/edit
   def edit
-    @comedian = Comedian.find(params[:id])
+    @comedian = Comedian.find_by_slug(params[:id])
   end
 
   # POST /comedians
@@ -56,7 +56,7 @@ class ComediansController < ApplicationController
   # PUT /comedians/1
   # PUT /comedians/1.json
   def update
-    @comedian = Comedian.find(params[:id])
+    @comedian = Comedian.find_by_slug(params[:id])
 
     respond_to do |format|
       if @comedian.update_attributes(params[:comedian])
@@ -72,7 +72,7 @@ class ComediansController < ApplicationController
   # DELETE /comedians/1
   # DELETE /comedians/1.json
   def destroy
-    @comedian = Comedian.find(params[:id])
+    @comedian = Comedian.find_by_slug(params[:id])
     @comedian.destroy
 
     respond_to do |format|
