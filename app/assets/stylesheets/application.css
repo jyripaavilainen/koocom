@@ -60,6 +60,10 @@ a.btn-inverse:visited {
 	color: #FFF;
 }
 
+.navbar-inner .container a.btn-navbar {
+	margin-right: 1rem !important;
+}
+
 .brand:hover{
 	background: none !important;
 }

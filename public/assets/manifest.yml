@@ -49,9 +49,9 @@ sutela-400x500.png: sutela-400x500-4aa549166d6d6a9bb9ce2b1ac1229b91.png
 sutela-400x500/index.png: sutela-400x500-4aa549166d6d6a9bb9ce2b1ac1229b91.png
 vaismaa-400x500.png: vaismaa-400x500-b6e243e31a8f333505476c47515eeeda.png
 vaismaa-400x500/index.png: vaismaa-400x500-b6e243e31a8f333505476c47515eeeda.png
-application.js: application-36f226b58d238e19a8081f624ffc65f3.js
-application/index.js: application-36f226b58d238e19a8081f624ffc65f3.js
-application.css: application-49ca330908f085b8dc96a67c6c0a5cfd.css
-application/index.css: application-49ca330908f085b8dc96a67c6c0a5cfd.css
+application.js: application-42c3ff2e3de3c51e19f99af372f58274.js
+application/index.js: application-42c3ff2e3de3c51e19f99af372f58274.js
+application.css: application-d408c97e3734d31d745329db2e2d2103.css
+application/index.css: application-d408c97e3734d31d745329db2e2d2103.css
 jquery.min.map: jquery.min-1c0cf7b6a3425fbd9a3bfccab0a99a4e.map
 jquery/index.min.map: jquery.min-1c0cf7b6a3425fbd9a3bfccab0a99a4e.map
