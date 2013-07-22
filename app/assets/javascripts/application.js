@@ -10,22 +10,8 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-
+//= require jquery
+//= require jquery.ui.datepicker
+//= require jquery.ui.datepicker-fi
 //= require jquery_ujs
 //= require_tree .
-
-var $ = jQuery;
-var jq = $.noConflict();
-
-$( document ).ready(function () {
-    $(".datepicker").datepicker({
-    	minDate: new Date(),
-    	dateFormat: 'dd.mm.yy',
-    	firstDay: 1
-    }, $.datepicker.regional[ 'fi' ]);
-
-});
-
-$( document ).ready(function () {
-	$(".placeholder").placeHeld();
-});

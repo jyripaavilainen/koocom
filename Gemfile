@@ -31,6 +31,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "nifty-generators", :group => :development
 
 # To use ActiveModel has_secure_password
