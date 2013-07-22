@@ -16,7 +16,7 @@
 
 var jq = $.noConflict();
 
-$(document).ready(function() {
+jQuery(document).ready(function ($) {
     $(".datepicker").datepicker({
     	minDate: new Date(),
     	dateFormat: 'dd.mm.yy',
@@ -25,6 +25,6 @@ $(document).ready(function() {
 
 });
 
-$(document).ready(function() {
+jQuery(document).ready(function ($) {
 	$(".placeholder").placeHeld();
 });

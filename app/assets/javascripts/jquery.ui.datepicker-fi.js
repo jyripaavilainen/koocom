@@ -3,7 +3,7 @@
 
 var jq = $.noConflict();
 
-$(document).ready(function() {
+$(document).ready(function($) {
     $.datepicker.regional['fi'] = {
                 closeText: 'Sulje',
                 prevText: '&laquo;Edellinen',

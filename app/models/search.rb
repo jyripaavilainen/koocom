@@ -20,7 +20,7 @@ class Search < ActiveRecord::Base
 	end
 
 	def comedian_conditions
-		["events.description LIKE ?", "%#{comedian}%"] unless comedian.blank?
+		["events.description LIKE ?", "%#{comedian.humanize}%"] unless comedian.blank?
 	end
 
 	def date_conditions
@@ -28,7 +28,7 @@ class Search < ActiveRecord::Base
 	end
 
 	def city_conditions
-		["events.city LIKE ?", "%#{city}%"] unless city.blank?
+		["events.city LIKE ?", "%#{city.humanize}%"] unless city.blank?
 	end
 
 	def conditions
