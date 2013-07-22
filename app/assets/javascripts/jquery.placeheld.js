@@ -9,7 +9,9 @@
 // * v1.0.2 (2010-05-10) Removed default text from form submission; moved placeholder support check outside for() loop
 // * v1.0.3 (2010-05-14) Added check for "placheld" class before clearing default text on form submission
 
-(function($){
+var $ = jQuery;
+
+jQuery( document ).ready(function(){
   $.placeHeld = function(el, options){
     var base = this;
     base.$el = $(el);
@@ -51,4 +53,4 @@
       (new $.placeHeld(this, options));
     });
   };
-})(jQuery);
+});

@@ -10,13 +10,14 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+
 //= require jquery_ujs
 //= require_tree .
 
+var $ = jQuery;
 var jq = $.noConflict();
 
-jQuery(document).ready(function ($) {
+$( document ).ready(function () {
     $(".datepicker").datepicker({
     	minDate: new Date(),
     	dateFormat: 'dd.mm.yy',
@@ -25,6 +26,6 @@ jQuery(document).ready(function ($) {
 
 });
 
-jQuery(document).ready(function ($) {
+$( document ).ready(function () {
 	$(".placeholder").placeHeld();
 });
