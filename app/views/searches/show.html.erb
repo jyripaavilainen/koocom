@@ -1,11 +1,42 @@
 <% title "Search" %>
 
-<% partial_content = @search.events %>
+<div class="row">
+	<div class="span3 sidebar-blue">
 
-<% if partial_content.blank? %>
-	<div class="no-events-found">
-		<p>Valitettavasti hakukriteereillä ei löytynyt yhtään tapahtumaa.</p>
+		<%= form_for @search do |f| %>
+		<%= f.error_messages %>
+
+		  <div class="search-box sidebar no-margin">
+		    <div class="search-comedian-container sidebar">
+		      <%= f.text_field :comedian, :placeholder => "Ketä katsomaan?", class: "placeholder" %>
+		    </div>
+		    <div class="search-city-container sidebar">
+		      <%= f.text_field :city, :placeholder => "Missä kaupungissa?", class: "placeholder" %>
+		    </div>
+		    <div class="search-date-container sidebar">
+		      <%= f.text_field :date, :placeholder => "Minä päivänä?", class: "datepicker placeholder" %>
+		    </div>
+		    <div class="search-submit-container sidebar">
+		      <%= f.submit "Etsi" %>
+		    </div>
+		    <div class="clear"></div>
+		  </div>
+
+		<% end %>
+
 	</div>
-<% else %>
-	<%= render :partial => @search.events %>
-<% end %>
+	<div class="span9 event-search-content">
+
+		<% partial_content = @search.events %>
+
+		<% if partial_content.blank? %>
+			<div class="no-events-found">
+				<p>Valitettavasti hakukriteereillä ei löytynyt yhtään tapahtumaa.</p>
+			</div>
+		<% else %>
+			<%= render :partial => @search.events %>
+		<% end %>
+
+	</div>
+</div>
+

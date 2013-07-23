@@ -4,35 +4,63 @@
     <% if organizer_signed_in? %>
         <%= link_to 'Uusi tapahtuma', new_event_path, class: "btn btn-info btn-large" %>
     <% end %>  
-    <% @events.each do |event| %>
 
-        <div class="event-container clear">
+    <div class="row">
+        <div class="span3 sidebar-blue">
 
-            <div class="event-city clear">
-                <h4><%= event.city %></h4>
-            </div>
+            <%= form_for Search.new do |f| %>
+            <%= f.error_messages %>
 
-            <div class="event-info">
-                <div class="event-date-time">
-                    <p><%= event.date.to_formatted_s(:fi) %> <%= event.start_time.to_formatted_s(:time) %>–<%= event.end_time.to_formatted_s(:time) %> | <%= event.venue %></p>
+              <div class="search-box sidebar no-margin">
+                <div class="search-comedian-container sidebar">
+                  <%= f.text_field :comedian, :placeholder => "Ketä katsomaan?", class: "placeholder" %>
                 </div>
-                <div class="event-name">
-                    <h2><%= link_to event.name, event %></h2>
+                <div class="search-city-container sidebar">
+                  <%= f.text_field :city, :placeholder => "Missä kaupungissa?", class: "placeholder" %>
                 </div>
-                <div class="event-comedians">
-                    <p><%= event.description %></p>
+                <div class="search-date-container sidebar">
+                  <%= f.text_field :date, :placeholder => "Minä päivänä?", class: "datepicker placeholder" %>
                 </div>
+                <div class="search-submit-container sidebar">
+                  <%= f.submit "Etsi" %>
+                </div>
+                <div class="clear"></div>
+              </div>
 
-            </div>
+            <% end %>
 
-            <div class="event-pricing">
-                <div class="event-price">
+        </div>
+        <div class="span9 event-search-content">
+
+        <% @events.each do |event| %>
+
+            <div class="row event-container clear">
+                <div class="span1 event-date">
+                    <span class="badge badge-event-date"><%= event.date.to_formatted_s(:fi) %></span>
+                </div>
+                <div class="span6">
+                    <div class="event-name">
+                        <h2><%= link_to event.name, event %></h2>
+                    </div>
+                    <div class="event-venue">
+                        <p><%= event.venue %>, <%= event.city %></p>
+                    </div>
+                    <div class="event-comedians hidden-desktop">
+                        <p><%= event.description %></p>
+                    </div>
+                </div>
+                <div class="span2 event-tickets">
                     <p><%= event.price %> €</p>
                 </div>
             </div>
-            <div class="clear"></div>
-        </div>
+            <div class="row">
+                <div class="span7 offset1">
+                    <hr />
+                </div>
+            </div>
 
-    <% end %>
+        <% end %>
+
+    </div>
 
 </div>

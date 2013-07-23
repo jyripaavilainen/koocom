@@ -15,4 +15,16 @@ class SearchesController < ApplicationController
   def show
     @search = Search.find(params[:id])
   end
+
+  def update
+    @search = Search.find(params[:id])
+      if @search.update_attributes(params[:search])  #update the note
+        redirect_to @search
+      else
+        render :edit                             #if not, render the form
+      end
+  end
+
+
+
 end

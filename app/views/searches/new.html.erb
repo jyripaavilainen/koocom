@@ -1,10 +1,11 @@
 <div class="hero-unit clear stageshot">
 
+  <h1>Kaikki Suomen Stand-up</h1>
+  <p>Tältä sivustolta löydät kotimaan stand up -keikat ja -koomikot sekä tilaat omaan tilaisuuteesi juuri oikeanlaisen esiintyjän.</p>
+
   <%= form_for @search do |f| %>
     <%= f.error_messages %>
 
-      <h1>Kaikki Suomen Stand-up</h1>
-      <p>Tältä sivustolta löydät kotimaan stand up -keikat ja -koomikot sekä tilaat omaan tilaisuuteesi juuri oikeanlaisen esiintyjän.</p>
       <div class="search-box">
         <div class="search-comedian-container">
           <%= f.text_field :comedian, :placeholder => "Ketä katsomaan?", class: "placeholder" %>

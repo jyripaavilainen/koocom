@@ -78,6 +78,8 @@ a.btn-inverse:visited {
 
 .clear {clear:both;}
 
+.no-margin {margin: 0 !important;}
+
 /* 
  * RESPONSIVE VIDEO
  */
@@ -105,65 +107,32 @@ a.btn-inverse:visited {
  * TAPAHTUMALISTAUS
  */
 
-.event-container {
-	width: 100%;
-	margin: 2em 0;
-	background-color: #f5f5f5;
-}
-
-.event-city {
-	width:100%;
-	border-bottom: 1px solid #EEE;
-	padding: 0;
-	margin-bottom: 1em;
-	background-color: #FFF;
-}
-
-.event-city h4{
-	background-color: #6CF;
-	color: #FFF;
-	padding: 0.5em 2em 0.5em 1em;
-	margin: 0;
-	width:30%;
-}
-
-.event-info {
-	width: 60%;
-	padding: 1em;
-	float: left;
-	clear: left;
-}
-
-.event-date-time, .event-name, .event-comedians, .event-price{
-	width: 100%;
-	padding: 0;
-}
-
-.event-date-time p {
-	font-size: 1.125rem;
-}
-
-.event-comedians p {
-	font-size: 0.875rem;
+.badge-event-date {
+	font-size: 16px;
+	padding: 6px 12px;
+	font-weight: 200;
+	background-color: #6cf;
 	margin-top: 0.5rem;
 }
 
 .event-name h2 {
-	font-size: 2rem;
-	font-weight: bold;
+	font-size: 24px;
+	color: #000;
 	margin: 0;
 }
 
-.event-pricing {
-	width: 30%;
-	float: right;
-	padding: 2rem 1.5rem 1rem;
+.event-venue p {
+	font-size: 16px;
 }
 
-.event-price p {
-	text-align: center;
-	font-size: 3rem;
-	font-weight: bold;
+.event-comedians p {
+	color: #6CF;
+}
+
+.event-tickets p {
+	font-size: 36px;
+	margin-top: 14px;
+	text-align: right;
 }
 
 /* 
@@ -299,4 +268,8 @@ img.comedian-picture {
 	padding: 1rem;
 	width: 100%;
 	margin: 0;
+}
+
+.sidebar {
+	width: 100%;
 }

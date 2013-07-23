@@ -53,8 +53,8 @@ vaismaa-400x500.png: vaismaa-400x500-b6e243e31a8f333505476c47515eeeda.png
 vaismaa-400x500/index.png: vaismaa-400x500-b6e243e31a8f333505476c47515eeeda.png
 application.js: application-995f62585e5a65d968261a73bd2d8569.js
 application/index.js: application-995f62585e5a65d968261a73bd2d8569.js
-application.css: application-3fefd12d9223ec363114231ffb061bb3.css
-application/index.css: application-3fefd12d9223ec363114231ffb061bb3.css
+application.css: application-ebe9a6f794aacd41c4879cc30a7adbd4.css
+application/index.css: application-ebe9a6f794aacd41c4879cc30a7adbd4.css
 jquery-ui/animated-overlay.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/animated-overlay/index.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-7d1197a52442bc56fcad60d0390f4b32.png
