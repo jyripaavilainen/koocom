@@ -14,7 +14,7 @@
  */
 
 /* apply a natural box layout model to all elements */
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; }
 
 input#event_start_time, input#event_end_time {
 	width: 95px;
@@ -107,6 +107,14 @@ a.btn-inverse:visited {
  * TAPAHTUMALISTAUS
  */
 
+.event-container {
+	padding-top: 0.5rem;
+}
+
+.event-container:hover {
+	background-color: #f5f5f5;
+}
+
 .badge-event-date {
 	font-size: 16px;
 	padding: 6px 12px;
@@ -119,14 +127,17 @@ a.btn-inverse:visited {
 	font-size: 24px;
 	color: #000;
 	margin: 0;
+	line-height: 1.25;
 }
 
 .event-venue p {
 	font-size: 16px;
+	margin: 0rem 0 0.5rem;
 }
 
 .event-comedians p {
-	color: #6CF;
+	color: #6cf;
+	font-size: 16px;
 }
 
 .event-tickets p {
@@ -141,19 +152,20 @@ a.btn-inverse:visited {
 
 .comedian-listing {
 	float: left;
-	margin: 1rem 1rem 3rem;
-	width: 140px;
-	height: 232px;
-	border: 5px solid #FFF;
-	box-shadow: 5px 3px 25px -10px #000;
+	margin: 0.75rem;
+	width: 170px;
+	height: 200px;
 }
+
 img.comedian-picture {
-	width: 100%;
-	height: auto;
+	width: 170px;
+	height: 170px;
+	background-size: cover;
+	margin-bottom: 0.5rem;
 }
 
 .comedian-name p {
-	font-size: 1.25rem;
+	font-size: 18px;
 	line-height: 1.5;
 	text-align: center;
 }
