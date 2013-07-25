@@ -2,29 +2,22 @@
   <title><%= @comedian.stagename %> | Kotimaiset stand up -koomikot | Koomikot.com</title>
 <% end %>
 
-<h1 class="comedian-profile-name"><%= @comedian.stagename %></h1>
-
-<%= link_to 'Kotisivut', @comedian.website_url, class: "btn btn-info btn-large comedian-website-button" %>
-<%= link_to 'Tilaa keikalle', "#", class: "btn btn-success btn-large comedian-book-button" %>
-
-<div class="clear"></div>
-
-<div class="image-frame">
-  <%= image_tag @comedian.profile_photo_url, class: "comedian-picture" %>
+<div class="row">
+    <div class="span3 sidebar-blue">
+	     <img src="http://www.jyripaavilainen.com/empty.png" class="comedian-picture comedian-profile-picture img-rounded" style="background-image: url('<%= @comedian.profile_photo_url %>');">
+		<h1 class="comedian-profile-name"><%= @comedian.stagename %></h1> 
+		<%= link_to 'Kotisivut', @comedian.website_url, class: "btn btn-info btn-large comedian-website-button" %>
+		<%= link_to 'Tilaa keikalle', "#", class: "btn btn-success btn-large comedian-book-button" %>
+		<% if organizer_signed_in? && current_organizer.admin? %>
+		  <%= link_to 'Muokkaa koomikkoa', edit_comedian_path(@comedian), class: "btn btn-info btn-large" %>
+		<% end %>
+	</div>
+	<div class="span9">
+		<div class="comedian-description">
+		  <p><%= @comedian.description %></p>
+		</div>
+		<div class="video-container">
+		  <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/"+@comedian.youtube_video_id %>" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
 </div>
-
-<div class="comedian-description">
-  <p><%= @comedian.description %></p>
-</div>
-
-<div class="clear"></div>
-
-<div class="video-container">
-  <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/"+@comedian.youtube_video_id %>" frameborder="0" allowfullscreen></iframe>
-</div>
-
-
-<% if organizer_signed_in? && current_organizer.admin? %>
-  <%= link_to 'Muokkaa koomikkoa', edit_comedian_path(@comedian), class: "btn btn-info btn-large" %>
-  <%= link_to 'Palaa listaukseen', comedians_path, class: "btn btn-large" %>
-<% end %>

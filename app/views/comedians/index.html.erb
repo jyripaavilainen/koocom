@@ -16,7 +16,7 @@
     <div class="comedian-listing">
 
         <%= link_to comedian do %>
-         <%= image_tag comedian.profile_photo_url, class: "comedian-picture" %>
+         <img src="http://www.jyripaavilainen.com/empty.png" class="comedian-picture img-rounded" style="background-image: url('<%= comedian.profile_photo_url %>');">
         <% end %>
 
         <div class="comedian-name">
@@ -31,7 +31,6 @@
             <% end %>
         <% end %>
     </div>
-
 
 
 <% end %>
