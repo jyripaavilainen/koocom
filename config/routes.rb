@@ -11,6 +11,7 @@ Koocom::Application.routes.draw do
   root :to => "searches#new"
 
   match "/searches" => "searches#new"
+  match "/tilaa" => "comedians#book"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

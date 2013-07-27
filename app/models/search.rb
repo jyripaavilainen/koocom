@@ -12,7 +12,7 @@ class Search < ActiveRecord::Base
 	private
 
 	def find_comedians
-		Comedian.find(:all)
+		Comedian.find(:all, :limit => 12)
 	end
 
 	def find_events

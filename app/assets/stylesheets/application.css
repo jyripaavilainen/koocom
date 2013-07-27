@@ -203,6 +203,13 @@ img.comedian-picture {
 	float: left;
 }
 
+.comedian-website-button,
+.comedian-book-button {
+	margin: 0 0 0.5rem;
+	width: 100%;
+	clear: both;
+}
+
 .comedian-description {
 	width: 100%;
 	margin: 1rem 0;
